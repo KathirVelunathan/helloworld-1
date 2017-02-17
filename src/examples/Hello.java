@@ -34,7 +34,7 @@ public final class Hello extends HttpServlet {
         if(shouldGenerate(request.getParameter("Key")))
         writer.println(getOutput(request.getParameter("Key")));
                        else
-        writer.println(getOutput("Other Names Given");
+        writer.println(getOutput("Other Names Given"));
                       
     }
     
