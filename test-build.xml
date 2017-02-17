@@ -48,7 +48,7 @@
         <javac srcdir="src/test/java" destdir="target/test-classes" classpathref="classpath" includeantruntime="false"/>
     </target>
 
-    <target name="runTest" depends="compile-test">
+    <target name="runTest" depends="download,compile-test">
         <mkdir dir="target/cucumber-junit-report"/>
         <java classname="cucumber.api.cli.Main" fork="true" failonerror="false" resultproperty="cucumber.exitstatus">
             <classpath refid="classpath"/>
