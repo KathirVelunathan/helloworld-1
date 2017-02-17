@@ -8,6 +8,8 @@
     <property name="cucumber-html.version" value="0.2.3"/>
     <property name="junit.version" value="4.12"/>
     <property name="jars" value="lib"/>
+    <property name="tcserver.home" value="/opt/tomcat/apache-tomcat-8.5.11" />
+
 
     <target name="download">
         <mkdir dir="${jars}"/>
@@ -32,6 +34,13 @@
             <fileset dir="${jars}">
                 <include name="**/*.jar"/>
             </fileset>
+             <fileset dir="${tcserver.home}/bin">
+      <include name="*.jar"/>
+    </fileset>
+    <pathelement location="${tcserver.home}/lib"/>
+    <fileset dir="${tcserver.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
             <pathelement location="src/test/resources"/>
             <pathelement location="target/classes"/>
             <pathelement location="target/test-classes"/>
