@@ -31,27 +31,43 @@ public final class Hello extends HttpServlet {
 
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();        
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<title>Sample Application Servlet Page</title>");
-        writer.println("</head>");
-        writer.println("<body bgcolor=white>");
+        if(shouldGenerate(request.getParameter("Key")))
+        writer.println(getOutput(request.getParameter("Key"));
+                       else
+        writer.println(getOutput("Other Names Given");
+                      
+    }
+    
+    public boolean shouldGenerate(String l_value)
+     {
+        if(l_value=="Kathir")
+            return true;
+         else
+             return false;
+     
+     }
+    public String getOutput(String l_input)
+    {
+        StringBuffer l_strBuffer=new StringBuffer("<html><head><title>Sample Application Servlet Page</title></head>");
+        l_strBuffer.append("<body bgcolor=white>");
 
-        writer.println("<table border=\"0\" cellpadding=\"10\">");
-        writer.println("<tr>");
-        writer.println("<td>");
-        writer.println("<img src=\"images/springsource.png\">");
-        writer.println("</td>");
-        writer.println("<td>");
-        writer.println("<h1>Sample Application Servlet</h1>");
-        writer.println("</td>");
-        writer.println("</tr>");
-        writer.println("</table>");
+        l_strBuffer.append("<table border=\"0\" cellpadding=\"10\">");
+        l_strBuffer.append("<tr>");
+        l_strBuffer.append("<td>");
+        l_strBuffer.append("<img src=\"images/springsource.png\">");
+        l_strBuffer.append("</td>");
+        l_strBuffer.append("<td>");
+        l_strBuffer.append("<h1>Sample Application Servlet</h1>");
+        l_strBuffer.append("</td>");
+        l_strBuffer.append("</tr>");
+        l_strBuffer.append("</table>");
 
-        writer.println("This is the output of a servlet that is part of");
-        writer.println("the Hello, World application. Prakash Servlet change");
+        l_strBuffer.append("This is the output of a servlet that is part of");
+        l_strBuffer.append("the Hello, World application. Prakash Servlet change");
+        l_strBuffer.append(" This is input").append(l_input);
 
-        writer.println("</body>");
-        writer.println("</html>");
+        l_strBuffer.append("</body>");
+        l_strBuffer.append("</html>");
+        return l_strBuffer.toString();
     }
 } 
