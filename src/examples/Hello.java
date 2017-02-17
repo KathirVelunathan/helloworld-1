@@ -32,7 +32,7 @@ public final class Hello extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();        
         if(shouldGenerate(request.getParameter("Key")))
-        writer.println(getOutput(request.getParameter("Key"));
+        writer.println(getOutput(request.getParameter("Key")));
                        else
         writer.println(getOutput("Other Names Given");
                       
