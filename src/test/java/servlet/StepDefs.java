@@ -10,22 +10,22 @@ public class StepDefs {
  
  
 
-   @Given("^I have a Get Request for (\\d+)$")
-    public void I_have_a_get_request(String l_input) throws Throwable {
+   @Given("^I have a Get Request for Kathir$")
+    public void I_have_a_get_request() throws Throwable {
         Hello testHello = new Hello();
         testHello.doGet(null, null);
     }
     
-    @When("I submit the request for (\\d+)$")
-    public void I_submit_the_request_for(String l_input) throws Throwable {
+    @When("I submit the request for Mohan$")
+    public void I_submit_the_request_for() throws Throwable {
       Hello testHello = new Hello();
-      testHello.shouldGenerate(l_input);
+      testHello.shouldGenerate("Mohan");
     }
 
-      @Then("I should get a response for (\\d+)$")
-    public void I_should_get_a_response(String l_input) throws Throwable {
+      @Then("I should get a response for Kathir$")
+    public void I_should_get_a_response() throws Throwable {
       Hello testHello = new Hello();
-      testHello.getOutput(l_input);
+      testHello.getOutput("Kathir");
     }
 
 }
