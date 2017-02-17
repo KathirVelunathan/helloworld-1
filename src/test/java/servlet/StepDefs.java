@@ -6,7 +6,7 @@ import cucumber.api.java.en.Then;
 import examples.Hello;
 
 
-public class Stepdefs {
+public class StepDefs {
  
  
 
