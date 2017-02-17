@@ -19,7 +19,7 @@
   <br />
   <p>This is the output of a JSP page that is part of the HelloWorld application.</p>
 
-  <%= new String("Hello!") %>
+  <%= new String("Hello! Run time change") %>
 
   </body>
 </html>
