@@ -29,12 +29,19 @@ public final class Hello extends HttpServlet {
                       HttpServletResponse response)
       throws IOException, ServletException {
 
+        if(request!=null && response!=null)
+        {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();        
         if(shouldGenerate(request.getParameter("Key")))
         writer.println(getOutput(request.getParameter("Key")));
                        else
         writer.println(getOutput("Other Names Given"));
+        }
+        else
+        {
+            System.out.println("Got null objects in request and response");
+        }
                       
     }
     
